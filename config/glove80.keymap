@@ -238,19 +238,19 @@
             key-positions = <35 36 37>;
         };
 
-        qwm_tab {
-            bindings = <&kp TAB>;
+        qwm_delete {
+            bindings = <&kp DELETE>;
             key-positions = <23 24 25>;
-        };
-
-        qwmb_delete {
-            bindings = <&kp DEL>;
-            key-positions = <23 24 25 26>;
         };
 
         sy_scrolllock {
             bindings = <&kp SCROLLLOCK>;
             key-positions = <35 39>;
+        };
+
+        cgd_tab {
+            bindings = <&kp TAB>;
+            key-positions = <50 49 48>;
         };
     };
 
