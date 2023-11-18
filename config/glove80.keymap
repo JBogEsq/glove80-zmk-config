@@ -117,8 +117,8 @@
             key-positions = <23 26>;
         };
 
-        qm_to_media {
-            bindings = <&to 5>;
+        qm_to_num {
+            bindings = <&to 3>;
             key-positions = <23 25>;
         };
 
@@ -127,8 +127,8 @@
             key-positions = <23 38>;
         };
 
-        qt_to_num {
-            bindings = <&to 3>;
+        qt_to_sym {
+            bindings = <&to 1>;
             key-positions = <23 37>;
         };
 
@@ -232,24 +232,24 @@
             key-positions = <50 49>;
         };
 
-        wmb_escape {
+        rth_escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <24 25 26>;
+            key-positions = <38 37 36>;
         };
 
-        rth_ent {
+        cg_enter {
             bindings = <&kp ENTER>;
-            key-positions = <36 37 38>;
+            key-positions = <49 48>;
         };
 
-        srt_backspace {
+        rt_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <35 36 37>;
+            key-positions = <36 37>;
         };
 
-        qwm_delete {
+        wm_delete {
             bindings = <&kp DELETE>;
-            key-positions = <23 24 25>;
+            key-positions = <24 25>;
         };
 
         cgd_tab {
@@ -270,6 +270,16 @@
         dquote_scrolllock {
             bindings = <&kp SCROLLLOCK>;
             key-positions = <50 51>;
+        };
+
+        q+_sl_func {
+            bindings = <&sl 4>;
+            key-positions = <23 27>;
+        };
+
+        qy_to_macro {
+            bindings = <&sl 5>;
+            key-positions = <23 39>;
         };
     };
 
@@ -397,45 +407,6 @@
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
-        };
-
-        q_to_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-
-            label = "To Layey";
-        };
-
-        s_nav_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-
-            label = "S Nav Layer";
-        };
-
-        v_media_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-
-            label = "V Media Layer";
         };
     };
 };
