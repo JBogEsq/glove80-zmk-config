@@ -168,12 +168,12 @@
 
         symb_layer {
             bindings = <
-&trans  &trans                    &trans                             &trans                               &trans                                                                                            &trans  &trans  &trans  &trans  &trans
-&trans  &trans                    &trans                             &trans                               &trans                        &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp CARET                 &kp GRAVE                          &kp BACKSLASH                        &kp SLASH                     &kp HASH                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mt LESS_THAN LEFT_BRACE  &mt LEFT_BRACKET LEFT_PARENTHESIS  &mt RIGHT_BRACKET RIGHT_PARENTHESIS  &mt GREATER_THAN RIGHT_BRACE  &kp AT                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp AMPERSAND             &kp ASTERISK                       &kp PERCENT                          &mt QUESTION EXCL             &kp DOLLAR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans                    &trans                             &to 0                                &trans                                    &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans                    &trans                             &trans                               &trans                                                                                                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans                    &trans                             &trans                               &trans                        &trans                                                                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none                     &kp GRAVE                          &mt PIPE TILDE                       &mt SLASH BACKSLASH           &kp HASH                                                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mt LESS_THAN LEFT_BRACE  &mt LEFT_BRACKET LEFT_PARENTHESIS  &mt RIGHT_BRACKET RIGHT_PARENTHESIS  &mt GREATER_THAN RIGHT_BRACE  &kp AT                                                                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CARET                 &kp ASTERISK                       &kp PERCENT                          &mt QUESTION EXCL             &mt AMPERSAND DOLLAR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans                    &trans                             &to 0                                &trans                                              &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Symbols";
