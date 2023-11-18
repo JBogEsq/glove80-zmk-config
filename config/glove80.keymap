@@ -132,6 +132,15 @@
             key-positions = <23 37>;
         };
 
+        q+_sl_func {
+            bindings = <&sl 4>;
+            key-positions = <23 27>;
+        };
+
+        qy_to_macro {
+            bindings = <&sl 5>;
+            key-positions = <23 39>;
+        };
         sm_up {
             bindings = <&kp UP>;
             key-positions = <35 25>;
@@ -174,32 +183,32 @@
 
         vr_previous {
             bindings = <&kp C_PREVIOUS>;
-            key-positions = <47 36>;
+            key-positions = <47 37>;
         };
 
         vt_play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
-            key-positions = <47 37>;
+            key-positions = <47 38>;
         };
 
         vh_next {
             bindings = <&kp C_NEXT>;
-            key-positions = <47 38>;
+            key-positions = <47 39>;
         };
 
         vc_softer {
             bindings = <&kp C_VOLUME_DOWN>;
-            key-positions = <47 48>;
+            key-positions = <47 49>;
         };
 
         vg_mute {
             bindings = <&kp C_MUTE>;
-            key-positions = <47 49>;
+            key-positions = <47 50>;
         };
 
         vd_louder {
             bindings = <&kp C_VOLUME_UP>;
-            key-positions = <47 50>;
+            key-positions = <47 51>;
         };
 
         bw_left_brace {
@@ -232,14 +241,14 @@
             key-positions = <50 49>;
         };
 
+        wm_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <24 25>;
+        };
+
         rth_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <38 37 36>;
-        };
-
-        cg_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <49 48>;
         };
 
         rt_backspace {
@@ -247,9 +256,9 @@
             key-positions = <36 37>;
         };
 
-        wm_delete {
-            bindings = <&kp DELETE>;
-            key-positions = <24 25>;
+        cg_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <49 48>;
         };
 
         cgd_tab {
@@ -272,15 +281,7 @@
             key-positions = <50 51>;
         };
 
-        q+_sl_func {
-            bindings = <&sl 4>;
-            key-positions = <23 27>;
-        };
 
-        qy_to_macro {
-            bindings = <&sl 5>;
-            key-positions = <23 39>;
-        };
     };
 
     keymap {
