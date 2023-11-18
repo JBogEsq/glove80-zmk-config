@@ -186,5 +186,31 @@
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
+
+        left_home_layer {
+            bindings = <
+&trans  &trans     &trans        &trans     &trans                                                                        &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans        &trans     &trans        &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans        &trans     &trans        &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LSHFT  &sk LEFT_GUI  &sk LCTRL  &sk LEFT_ALT  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans        &trans     &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans        &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Left Home Row";
+        };
+
+        right_home_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans         &trans     &trans         &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans         &trans     &trans         &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans         &trans     &trans         &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &sk RIGHT_ALT  &sk RCTRL  &sk RIGHT_GUI  &sk RSHFT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans     &trans         &trans     &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans         &trans     &trans         &trans     &trans
+            >;
+
+            label = "Right Home Row";
+        };
     };
 };
