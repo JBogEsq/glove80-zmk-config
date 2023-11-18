@@ -103,34 +103,24 @@
     combos {
         compatible = "zmk,combos";
 
-        sm_to_num {
-            bindings = <&to 3>;
-            key-positions = <35 25>;
-        };
-
-        st_to_sym {
-            bindings = <&to 1>;
-            key-positions = <35 37>;
-        };
-
-        sg_to_macro {
-            bindings = <&to 5>;
-            key-positions = <35 49>;
-        };
-
-        sb_to_nav {
-            bindings = <&to 2>;
-            key-positions = <35 26>;
-        };
-
-        sh_to_func {
-            bindings = <&to 4>;
-            key-positions = <35 38>;
-        };
-
-        sd_to_base {
+        qh_home {
             bindings = <&to 0>;
-            key-positions = <35 50>;
+            key-positions = <38 23>;
+        };
+
+        qm_to_media {
+            bindings = <&to 5>;
+            key-positions = <23 25>;
+        };
+
+        qb_to_nav {
+            bindings = <&to 2>;
+            key-positions = <23 26>;
+        };
+
+        qt_to_num {
+            bindings = <&to 3>;
+            key-positions = <23 37>;
         };
     };
 
