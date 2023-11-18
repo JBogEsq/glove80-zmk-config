@@ -48,8 +48,8 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
         };
 
         l_to_mo: l_to_mo {
