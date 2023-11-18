@@ -207,12 +207,12 @@
 
         func_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &to 0   &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans  &trans   &trans   &trans                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LSHFT     &kp F1  &kp F2   &kp F3   &kp F4                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LEFT_ALT  &kp F5  &kp F6   &kp F7   &kp F8                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LCTRL     &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans  &to 0    &trans            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Functions";
