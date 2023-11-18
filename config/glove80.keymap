@@ -61,6 +61,15 @@
             tapping-term-ms = <100>;
             flavor = "tap-unless-interrupted";
         };
+
+        ht_caps_cw: ht_caps_cw {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT Caps or Capsword";
+            bindings = <&kp>, <&caps_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -241,11 +250,6 @@
         qwm_delete {
             bindings = <&kp DELETE>;
             key-positions = <23 24 25>;
-        };
-
-        sy_scrolllock {
-            bindings = <&kp SCROLLLOCK>;
-            key-positions = <35 39>;
         };
 
         cgd_tab {
