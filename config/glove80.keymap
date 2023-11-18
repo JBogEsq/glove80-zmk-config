@@ -112,9 +112,9 @@
     combos {
         compatible = "zmk,combos";
 
-        qh_home {
+        qb_home {
             bindings = <&to 0>;
-            key-positions = <38 23>;
+            key-positions = <23 26>;
         };
 
         qm_to_media {
@@ -122,9 +122,9 @@
             key-positions = <23 25>;
         };
 
-        qb_to_nav {
+        qh_to_nav {
             bindings = <&to 2>;
-            key-positions = <23 26>;
+            key-positions = <23 38>;
         };
 
         qt_to_num {
