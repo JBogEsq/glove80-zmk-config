@@ -141,6 +141,7 @@
             bindings = <&sl 5>;
             key-positions = <23 39>;
         };
+
         sm_up {
             bindings = <&kp UP>;
             key-positions = <35 25>;
@@ -281,7 +282,20 @@
             key-positions = <50 51>;
         };
 
+        qwmb_lock {
+            bindings = <&kp K_LOCK>;
+            key-positions = <24 25 26 23>;
+        };
 
+        srth_task_manger {
+            bindings = <&kp LC(LS(ESCAPE))>;
+            key-positions = <38 37 36 35>;
+        };
+
+        vcgd_ctrl_alt_del {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <47 48 49 50>;
+        };
     };
 
     keymap {
