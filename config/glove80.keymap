@@ -190,7 +190,7 @@
 &trans  &trans                  &trans  &trans  &trans  &trans                                                                                                 &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp TAB                 &kp N1  &kp N2  &kp N3  &mt DELETE BACKSPACE                                                                                   &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &mt KP_DIVIDE KP_MINUS  &kp N4  &kp N5  &kp N6  &mt KP_MULTIPLY KP_PLUS                                                                                &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp KP_NUMBER_0         &kp N7  &kp N8  &kp N9  &mt KP_EQUAL KP_DOT      &mo_lay_kp 6 ESCAPE       &mo_lay_kp 1 HASH   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp KP_NUMBER_0         &kp N7  &kp N8  &kp N9  &mt EQUAL KP_DOT         &mo_lay_kp 6 ESCAPE       &mo_lay_kp 1 HASH   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans                  &trans  &to 0   &trans                           &mo_lay_kp 2 KP_NUMBER_0  &mt LSHFT KP_ENTER  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
