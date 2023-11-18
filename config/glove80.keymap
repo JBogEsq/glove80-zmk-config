@@ -98,14 +98,6 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
-
-        left_layer_1: left_layer_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>, <&macro_press>, <&kp>;
-
-            label = "LEFT_LAYER_1";
-        };
     };
 
     combos {
