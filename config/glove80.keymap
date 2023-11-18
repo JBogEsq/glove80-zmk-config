@@ -182,7 +182,7 @@
 &trans  &trans     &trans        &trans     &trans        &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans        &trans     &trans        &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &sk LSHFT  &sk LEFT_GUI  &sk LCTRL  &sk LEFT_ALT  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans        &trans     &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &caps_word    &kp HOME   &kp END       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans        &trans     &trans                &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
