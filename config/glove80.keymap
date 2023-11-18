@@ -256,6 +256,21 @@
             bindings = <&kp TAB>;
             key-positions = <50 49 48>;
         };
+
+        b+_numlock {
+            bindings = <&kp KP_NUMLOCK>;
+            key-positions = <27 26>;
+        };
+
+        hy_caps_or_cw {
+            bindings = <&ht_caps_cw CAPS 0>;
+            key-positions = <38 39>;
+        };
+
+        dquote_scrolllock {
+            bindings = <&kp SCROLLLOCK>;
+            key-positions = <50 51>;
+        };
     };
 
     keymap {
