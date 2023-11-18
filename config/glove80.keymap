@@ -122,6 +122,136 @@
             bindings = <&to 3>;
             key-positions = <23 37>;
         };
+
+        sm_up {
+            bindings = <&kp UP>;
+            key-positions = <35 25>;
+        };
+
+        sr_left {
+            bindings = <&kp LEFT>;
+            key-positions = <35 36>;
+        };
+
+        st_down {
+            bindings = <&kp DOWN>;
+            key-positions = <35 37>;
+        };
+
+        sh_right {
+            bindings = <&kp RIGHT>;
+            key-positions = <35 38>;
+        };
+
+        sb_pgup {
+            bindings = <&kp PG_UP>;
+            key-positions = <35 26>;
+        };
+
+        sd_pgdown {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <35 50>;
+        };
+
+        s+_home {
+            bindings = <&kp HOME>;
+            key-positions = <35 27>;
+        };
+
+        s_quote_end {
+            bindings = <&kp END>;
+            key-positions = <35 51>;
+        };
+
+        vr_previous {
+            bindings = <&kp C_PREVIOUS>;
+            key-positions = <47 36>;
+        };
+
+        vt_play_pause {
+            bindings = <&kp C_PLAY_PAUSE>;
+            key-positions = <47 37>;
+        };
+
+        vh_next {
+            bindings = <&kp C_NEXT>;
+            key-positions = <47 38>;
+        };
+
+        vc_softer {
+            bindings = <&kp C_VOLUME_DOWN>;
+            key-positions = <47 48>;
+        };
+
+        vg_mute {
+            bindings = <&kp C_MUTE>;
+            key-positions = <47 49>;
+        };
+
+        vd_louder {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <47 50>;
+        };
+
+        bw_left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <26 24>;
+        };
+
+        bm_right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <26 25>;
+        };
+
+        hr_left_paren {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <38 36>;
+        };
+
+        ht_right_paren {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <38 37>;
+        };
+
+        dc_left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <50 48>;
+        };
+
+        dg_right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <50 49>;
+        };
+
+        wmb_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <24 25 26>;
+        };
+
+        rth_ent {
+            bindings = <&kp ENTER>;
+            key-positions = <36 37 38>;
+        };
+
+        srt_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <35 36 37>;
+        };
+
+        qwm_tab {
+            bindings = <&kp TAB>;
+            key-positions = <23 24 25>;
+        };
+
+        qwmb_delete {
+            bindings = <&kp DEL>;
+            key-positions = <23 24 25 26>;
+        };
+
+        sy_scrolllock {
+            bindings = <&kp SCROLLLOCK>;
+            key-positions = <35 39>;
+        };
     };
 
     keymap {
@@ -248,6 +378,45 @@
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
+        };
+
+        q_to_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "To Layey";
+        };
+
+        s_nav_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "S Nav Layer";
+        };
+
+        v_media_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "V Media Layer";
         };
     };
 };
