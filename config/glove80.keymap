@@ -50,6 +50,16 @@
             flavor = "tap-unless-interrupted";
             tapping-term-ms = <100>;
         };
+
+        l_to_mo: l_to_mo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Mo layer on hold, to on tap.";
+            bindings = <&mo>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            flavor = "tap-unless-interrupted";
+        };
     };
 
     macros {
@@ -115,7 +125,7 @@
 &kp TAB     &kp Q     &kp W   &kp M   &kp B   &kp EQUAL                                                                                                 &kp MINUS            &kp K   &kp F   &kp J   &kp Z     &kp DELETE
 &kp ESC     &kp S     &kp R   &kp T   &kp H   &kp Y                                                                                                     &kp DOT              &kp A   &kp N   &kp I   &kp O     &kp ENTER
 &kp LCTRL   &kp V     &kp C   &kp G   &kp D   &kp SQT    &mo_lay_kp 6 DOUBLE_QUOTES  &to 3            &none  &none  &none                &lt 7 ESCAPE   &mt SEMICOLON COMMA  &kp U   &kp L   &kp P   &kp X     &kp RCTRL
-&magic 8 0  &kp LALT  &none   &to 0   &none              &lt 1 E                     &mt LSHFT ENTER  &none  &none  &mt RSHFT BACKSPACE  &mt TAB SPACE                       &none   &none   &none   &kp RALT  &kp LGUI
+&magic 8 0  &kp LALT  &none   &to 0   &none              &mo_lay_kp 1 E              &mt LSHFT ENTER  &none  &none  &mt RSHFT BACKSPACE  &mt TAB SPACE                       &none   &none   &none   &kp RALT  &kp LGUI
             >;
 
             label = "Base";
