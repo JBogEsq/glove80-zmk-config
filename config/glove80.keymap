@@ -93,9 +93,9 @@
 
             bindings = <
 &kp F1      &kp F2        &kp F3  &kp F4  &kp F5                                                                                       &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
-&kp EQUAL   &kp N1        &kp N2  &kp N3  &kp N4  &kp N5                                                                    &kp N6     &kp N7  &kp N8  &kp N9  &kp N0         &kp MINUS
-&kp TAB     &kp Q         &kp W   &kp M   &kp B   &kp EQUAL                                                                 &kp MINUS  &kp J   &kp K   &kp F   &kp Z          &kp BSLH
-&kp ESC     &kp S         &kp R   &kp T   &kp H   &kp Y                                                                     &kp DOT    &kp A   &kp N   &kp I   &kp O          &kp SQT
+&kp GRAVE   &kp N1        &kp N2  &kp N3  &kp N4  &kp N5                                                                    &kp N6     &kp N7  &kp N8  &kp N9  &kp N0         &kp DELETE
+&kp TAB     &kp Q         &kp W   &kp M   &kp B   &kp EQUAL                                                                 &kp MINUS  &kp J   &kp K   &kp F   &kp Z          &kp BACKSPACE
+&kp ESC     &kp S         &kp R   &kp T   &kp H   &kp Y                                                                     &kp DOT    &kp A   &kp N   &kp I   &kp O          &kp RETURN
 &kp LCTRL   &kp V         &kp C   &kp G   &kp D   &kp SQT    &mo 3  &none           &none  &none  &none          &mo 2      &kp COMMA  &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
 &magic 1 0  &kp LEFT_ALT  &none   &none   &none              &kp E  &kp LEFT_SHIFT  &none  &none  &kp BACKSPACE  &kp SPACE             &none   &none   &none   &kp RIGHT_ALT  &none
             >;
