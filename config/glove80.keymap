@@ -112,29 +112,6 @@
             >;
         };
 
-        /*        layer_trans {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-*/
-        /*        layer_none {
-            bindings = <
-&none   &none   &none   &none   &none                                                                   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                                                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                                                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                                                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none           &none   &none   &none   &none   &none   &none           &none   &none   &none   &none   &none
-            >;
-        };
-*/
-
         layer_rh_none {
             bindings = <
 &none  &none  &none  &none  &none                                                              &trans  &trans  &trans  &trans  &trans
@@ -159,14 +136,3 @@
     };
 };
 
-/*        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-*/
