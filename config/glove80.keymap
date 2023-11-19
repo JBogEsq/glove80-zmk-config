@@ -112,18 +112,20 @@
             >;
         };
 
-        layer_rh_none {
+        lh_mod_layer {
             bindings = <
-&none  &none  &none  &none  &none                                                              &trans  &trans  &trans  &trans  &trans
-&none  &none  &none  &none  &none  &none                                               &trans  &trans  &trans  &trans  &trans  &trans
-&none  &none  &none  &none  &none  &none                                               &trans  &trans  &trans  &trans  &trans  &trans
-&none  &none  &none  &none  &none  &none                                               &trans  &trans  &trans  &trans  &trans  &trans
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&none  &none  &none  &none  &none         &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&none  &none      &none         &none           &none                                                                           &trans  &trans  &trans  &trans  &trans
+&none  &none      &none         &none           &none       &none                                                       &trans  &trans  &trans  &trans  &trans  &trans
+&none  &kp HOME   &sk LEFT_GUI  &kp UP          &kp K_UNDO  &kp K_REDO                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&none  &sk LCTRL  &kp LEFT      &sk LEFT_SHIFT  &kp RIGHT   &kp C_AC_SAVE                                               &trans  &trans  &trans  &trans  &trans  &trans
+&none  &kp END    &sk LEFT_ALT  &kp DOWN        &kp K_COPY  &kp K_PASTE    &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none  &none      &none         &none           &none                      &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
+
+            label = "Left Hand Mods";
         };
 
-        layer_lh_none {
+        rh_mod_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                                              &none  &none  &none  &none  &none
 &trans  &trans  &trans  &trans  &trans  &trans                                               &none  &none  &none  &none  &none  &none
@@ -132,6 +134,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &none  &none  &none  &none  &none
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &none  &none  &none         &none  &none  &none  &none  &none
             >;
+
+            label = "Right Hand Mods";
         };
     };
 };
