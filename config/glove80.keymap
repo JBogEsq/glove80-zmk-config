@@ -44,10 +44,37 @@
         to_mo_layer: to_mo_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "TO_MO_LAYER";
-            bindings = <&none>, <&none>;
+            bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        period_colon: period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PERIOD_COLON";
+            bindings = <&kp PERIOD>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_semi: comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SEMI";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        question_exclaim: question_exclaim {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUESTION_EXCLAIM";
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -85,17 +112,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
-        };
-
-        reset_macro: reset_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL &kp LEFT_ALT &kp DEL>,
-                <&macro_release>;
-
-            label = "RESET_MACRO";
         };
     };
 
@@ -141,23 +157,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3  &kp F4  &kp F5                                                                                       &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2  &kp N3  &kp N4  &kp N5                                                                    &kp N6     &kp N7  &kp N8  &kp N9  &kp N0         &kp DELETE
-&kp TAB     &kp Q         &kp W   &kp M   &kp B   &kp EQUAL                                                                 &kp MINUS  &kp J   &kp K   &kp F   &kp Z          &kp BACKSPACE
-&kp ESC     &kp S         &kp R   &kp T   &kp H   &kp Y                                                                     &kp DOT    &kp A   &kp N   &kp I   &kp O          &kp RETURN
-&kp LCTRL   &kp V         &kp C   &kp G   &kp D   &kp SQT    &mo 3  &none           &none  &none  &none          &mo 2      &kp COMMA  &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
-&magic 1 0  &kp LEFT_ALT  &none   &none   &none              &kp E  &kp LEFT_SHIFT  &none  &none  &kp BACKSPACE  &kp SPACE             &none   &none   &none   &kp RIGHT_ALT  &none
-            >;
-        };
-
-        magic_layer {
-            bindings = <
-&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+&kp F1      &kp F2        &kp F3  &kp F4  &kp F5                                                                                                           &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2  &kp N3  &kp N4  &kp N5                                                                                    &kp N6         &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W   &kp M   &kp B   &kp EQUAL                                                                                 &kp MINUS      &kp J   &kp K   &kp F   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R   &kp T   &kp H   &kp Y                                                                                     &period_colon  &kp A   &kp N   &kp I   &kp O          &kp RETURN
+&kp LCTRL   &kp V         &kp C   &kp G   &kp D   &kp SQT    &mo 2  &to_mo_layer 3 3  &none             &none  &to_mo_layer 3 3  &mo 1      &comma_semi    &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 5 0  &kp LEFT_ALT  &none   &none   &none              &kp E  &kp LEFT_SHIFT    &to_mo_layer 4 4  &none  &kp RIGHT_SHIFT   &kp SPACE                 &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
@@ -185,6 +190,43 @@
             >;
 
             label = "Right Hand Mods";
+        };
+
+        num_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Numbers";
+        };
+
+        sym_layer {
+            bindings = <
+&trans  &trans         &trans         &trans        &trans                                                                              &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans         &trans        &trans        &trans                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(LT)     &kp LS(GT)     &kp LBKT      &kp RBKT      &kp FSLH                                                      &none   &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(DLLR)   &kp LS(PRCNT)  &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(STAR)                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(POUND)  &kp LS(AT)     &kp LS(LBRC)  &kp LS(RBRC)  &kp BSLH      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans         &trans        &trans                      &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Symbols";
+        };
+
+        magic_layer {
+            bindings = <
+&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
+&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
+&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
+&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+            >;
         };
     };
 };
