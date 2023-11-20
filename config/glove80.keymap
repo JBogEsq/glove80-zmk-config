@@ -157,12 +157,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                           &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                    &kp N6         &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &kp EQUAL                                                                                 &kp MINUS      &kp J   &kp K   &kp F   &kp Z          &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                     &period_colon  &kp A   &kp N   &kp I   &kp O          &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT    &mo 2  &to_mo_layer 3 3  &mo 5             &none  &to_mo_layer 3 3  &mo 1      &comma_semi    &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
-&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &none              &kp E  &kp LEFT_SHIFT    &to_mo_layer 4 4  &none  &kp RIGHT_SHIFT   &kp SPACE                 &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                               &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                        &kp N6         &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp M   &kp B   &kp EQUAL                                                                                     &kp MINUS      &kp J   &kp K   &kp F   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                         &period_colon  &kp A   &kp N   &kp I   &kp O          &kp RETURN
+&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT    &kp LSHFT  &mo 1             &mo 5             &none  &mo 2             &kp RSHFT  &comma_semi    &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &none              &kp E      &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &kp SPACE                 &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
