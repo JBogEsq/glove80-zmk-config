@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -130,6 +131,24 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
         };
+
+        dollar_percent: dollar_percent {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOLLAR_PERCENT";
+            bindings = <&kp DOLLAR>, <&kp PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ampersand_caret: ampersand_caret {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AMPERSAND_CARET";
+            bindings = <&kt AMPS>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -211,23 +230,23 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                       &kp F6             &kp F7  &kp F8  &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                               &kp N6          &kp N7             &kp N8  &kp N9  &kp N0         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &at_hash                                                                                             &hyphen_equals  &kp K              &kp F   &kp J   &kp Z          &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                &period_colon   &kp A              &kp N   &kp O   &kp I          &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT   &kp LSHFT  &mo 1             &mo 5             &none  &mo 2             &kp RSHFT          &comma_semi     &kp U              &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
-&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 7             &kp E      &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &space_underscore                  &exclaim_question  &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                      &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                              &kp N6          &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp M   &kp B   &none                                                                                               &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                               &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
+&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT  &kp LSHFT  &mo 1             &mo 5             &none  &mo 2             &kp RSHFT          &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 7            &kp E      &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
         lh_mod_layer {
             bindings = <
-&none  &none           &none         &none             &none                                                                                &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &none             &none        &none                                                           &trans  &trans  &trans  &trans  &trans  &trans
-&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &exclaim_question                                               &trans  &trans  &trans  &trans  &trans  &trans
-&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT    &kp A                                                           &trans  &trans  &trans  &trans  &trans  &trans
-&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &asterisk_plus     &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &to 0             &none                           &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none                                                                                          &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none        &none                                                           &trans            &trans  &trans  &trans  &trans  &trans
+&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &exclaim_question                                               &kp GRAVE         &trans  &trans  &trans  &trans  &trans
+&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT    &kp A                                                           &ampersand_caret  &trans  &trans  &trans  &trans  &trans
+&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &asterisk_plus     &none  &none  &none  &trans  &trans  &trans  &dollar_percent   &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &to 0             &none                           &none  &none  &none  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Left Hand Mods";
