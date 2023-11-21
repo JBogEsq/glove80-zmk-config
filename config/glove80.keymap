@@ -157,6 +157,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        parenthesis: parenthesis {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARENTHESIS";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -238,12 +247,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                      &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                              &kp N6          &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &none                                                                                               &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                               &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT  &kp LSHFT  &mo 1             &mo 5             &none  &mo 2             &kp RSHFT          &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
-&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 7            &kp E      &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                           &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                                   &kp N6          &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp M   &kp B   &parenthesis                                                                                             &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                    &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
+&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT       &kp LSHFT  &mo 1             &mo 5             &none  &mo 2             &kp RSHFT          &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 7                 &kp E      &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
