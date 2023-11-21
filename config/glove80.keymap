@@ -94,6 +94,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        undo_redo: undo_redo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UNDO_REDO";
+            bindings = <&kp K_UNDO>, <&kp K_REDO>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        copy_paste: copy_paste {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COPY_PASTE";
+            bindings = <&kp K_COPY>, <&kp K_PASTE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        space_underscore: space_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_UNDERSCORE";
+            bindings = <&kp SPACE>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        hyphen_equals: hyphen_equals {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HYPHEN_EQUALS";
+            bindings = <&kp MINUS>, <&kp EQUAL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
     };
 
     macros {
