@@ -344,8 +344,8 @@
             bindings = <
 &trans  &trans       &trans              &trans               &trans                                                                                     &trans  &trans  &trans  &trans  &trans
 &trans  &trans       &trans              &trans               &trans            &trans                                                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &none        &kp SLASH           &kp BSLH             &kp PLUS          &kp QUESTION                                                     &none   &trans  &trans  &trans  &trans  &trans
-&trans  &sk LSHFT    &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LS(ASTERISK)  &kp AMPERSAND                                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp PIPE     &kp SLASH           &kp BSLH             &kp PLUS          &kp AMPERSAND                                                    &none   &trans  &trans  &trans  &trans  &trans
+&trans  &none        &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LS(ASTERISK)  &kp QUESTION                                                     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp PERCENT  &kp LS(LEFT_BRACE)  &kp LS(RIGHT_BRACE)  &kp DOLLAR        &kp EXCLAMATION  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans       &trans              &to 0                &trans                             &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
@@ -388,17 +388,6 @@
             >;
 
             label = "QWERTY";
-        };
-
-        layer_8 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
         };
     };
 };
