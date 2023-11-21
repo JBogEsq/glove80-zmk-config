@@ -166,6 +166,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        comparison: comparison {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMPARISON";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -258,12 +267,12 @@
 
         lh_mod_layer {
             bindings = <
-&none  &none           &none         &none             &none                                                                             &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &none             &none        &none                                               &trans           &trans  &trans  &trans  &trans  &trans
-&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &none                                               &kp GRAVE        &trans  &trans  &trans  &trans  &trans
-&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT    &kp A                                               &none            &trans  &trans  &trans  &trans  &trans
-&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &none  &none  &none  &none  &trans  &trans  &trans  &dollar_percent  &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &to 0             &none               &none  &none  &none  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none                                                                          &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none        &none                                                     &trans  &trans  &trans  &trans  &trans  &trans
+&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &at_hash                                                  &none   &trans  &trans  &trans  &trans  &trans
+&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT    &kp A                                                     &none   &trans  &trans  &trans  &trans  &trans
+&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &comparison  &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &to 0             &none                     &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Left Hand Mods";
