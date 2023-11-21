@@ -193,6 +193,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        plus_times: plus_times {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUS_TIMES";
+            bindings = <&kp PLUS>, <&kp ASTERISK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_divide: dot_divide {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_DIVIDE";
+            bindings = <&kp DOT>, <&kp KP_DIVIDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -287,9 +305,9 @@
             bindings = <
 &none  &none           &none         &none             &none                                                                          &trans  &trans  &trans  &trans  &trans
 &none  &none           &none         &none             &none        &none                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &at_hash                                                  &none   &trans  &trans  &trans  &trans  &trans
+&none  &kp HOME        &sk LEFT_GUI  &kp UP            &undo_redo   &comparison                                               &none   &trans  &trans  &trans  &trans  &trans
 &none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT    &kp LC(A)                                                 &none   &trans  &trans  &trans  &trans  &trans
-&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &comparison  &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
+&none  &kp END         &sk LEFT_ALT  &kp DOWN          &copy_paste  &at_hash     &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
 &none  &none           &none         &to 0             &none                     &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
@@ -311,12 +329,12 @@
 
         num_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &to 0   &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans                                                                       &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans  &trans                                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk MINUS  &kp N9  &kp N8  &kp N7  &plus_times                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LSHFT  &kp N6  &kp N5  &kp N4  &dot_divide                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp ENTER  &kp N3  &kp N2  &kp N1  &kp N0       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &to 0   &trans               &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Numbers";
