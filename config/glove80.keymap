@@ -80,7 +80,7 @@
         undo_redo: undo_redo {
             compatible = "zmk,behavior-mod-morph";
             label = "UNDO_REDO";
-            bindings = <&kp K_UNDO>, <&kp K_REDO>;
+            bindings = <&kp K_UNDO>, <&kp LC(Y)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -89,7 +89,7 @@
         copy_paste: copy_paste {
             compatible = "zmk,behavior-mod-morph";
             label = "COPY_PASTE";
-            bindings = <&kp K_COPY>, <&kp K_PASTE>;
+            bindings = <&kp LC(K_COPY)>, <&kp LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
