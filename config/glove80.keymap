@@ -258,9 +258,9 @@
             key-positions = <36 37>;
         };
 
-        th_enter {
+        rh_enter {
             bindings = <&kp RETURN>;
-            key-positions = <37 38>;
+            key-positions = <38 36>;
         };
 
         rm_escape {
@@ -291,6 +291,11 @@
         bpar_shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <26 25>;
+        };
+
+        sy_to_default {
+            bindings = <&to 0>;
+            key-positions = <35 39>;
         };
     };
 
