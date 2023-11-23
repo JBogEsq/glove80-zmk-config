@@ -262,49 +262,49 @@
     combos {
         compatible = "zmk,combos";
 
-        rt_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <36 37>;
-        };
-
-        rh_enter {
-            bindings = <&kp RETURN>;
-            key-positions = <38 36>;
-        };
-
-        rm_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <36 25>;
-        };
-
-        wm_tab {
-            bindings = <&kp TAB>;
-            key-positions = <25 38>;
-        };
-
-        rg_delete {
-            bindings = <&kp DELETE>;
-            key-positions = <36 49>;
-        };
-
-        td_caps_word {
-            bindings = <&caps_word>;
-            key-positions = <37 50>;
-        };
-
-        ct_capslock {
-            bindings = <&kp CAPS>;
-            key-positions = <48 37>;
-        };
-
-        mb_shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <26 25>;
-        };
-
-        sy_to_default {
+        qb_to_0 {
             bindings = <&to 0>;
-            key-positions = <35 39>;
+            key-positions = <23 26>;
+        };
+
+        periodo_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <40 43>;
+        };
+
+        periodn_shift {
+            bindings = <&kp RSHIFT>;
+            key-positions = <40 42>;
+        };
+
+        periodi_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <44 40>;
+        };
+
+        perioda_tab {
+            bindings = <&kp TAB>;
+            key-positions = <40 41>;
+        };
+
+        ry_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <39 36>;
+        };
+
+        ty_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <39 35>;
+        };
+
+        ty_shift {
+            bindings = <&kp LSHFT>;
+            key-positions = <39 37>;
+        };
+
+        hy_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <39 38>;
         };
     };
 
