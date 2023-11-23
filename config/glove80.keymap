@@ -297,7 +297,7 @@
             key-positions = <48 37>;
         };
 
-        bpar_shift_tab {
+        mb_shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <26 25>;
         };
