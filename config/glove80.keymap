@@ -262,11 +262,6 @@
     combos {
         compatible = "zmk,combos";
 
-        qb_to_0 {
-            bindings = <&to 0>;
-            key-positions = <23 26>;
-        };
-
         periodo_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <40 43>;
@@ -307,16 +302,6 @@
             key-positions = <39 38>;
         };
 
-        wb_caps {
-            bindings = <&kp CAPS>;
-            key-positions = <24 26>;
-        };
-
-        qb_capsword {
-            bindings = <&caps_word>;
-            key-positions = <23 26>;
-        };
-
         hyphens_question {
             bindings = <&kp QUESTION>;
             key-positions = <28 30>;
@@ -341,12 +326,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                       &kp F6     &kp F7     &kp F8     &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                               &kp N6          &kp N7     &kp N8     &kp N9     &kp N0         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &parenthesis                                                                                         &hyphen_equals  &kp K      &kp F      &kp J      &kp Z          &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                &period_colon   &kp A      &kp N      &kp O      &kp I          &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT       &mo 1  &mo 1             &mo 5             &none  &mo 2             &mo 2              &comma_semi     &kp U      &kp L      &kp P      &kp X          &kp RIGHT_CONTROL
-&magic 6 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 7                 &kp E  &to_mo_layer 3 3  &to_mo_layer 4 4  &none  &to_mo_layer 4 4  &space_underscore                  &kp TILDE  &kp CARET  &kp GRAVE  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                 &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                         &kp N6          &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp M   &kp B   &parenthesis                                                                   &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                          &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
+&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT       &mo 1  &to_mo_layer 3 3  &mo 5  &none  &none  &mo 2              &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 7 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 8                 &kp E  &to_mo_layer 4 4  &mo 6  &none  &none  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
@@ -355,7 +340,7 @@
 &none  &none           &none         &none             &none                                                                          &trans  &trans  &trans  &trans  &trans
 &none  &none           &none         &none             &none      &none                                                       &trans  &trans  &trans  &trans  &trans  &trans
 &none  &kp CAPSLOCK    &sk LEFT_GUI  &kp UP            &kp HOME   &kp PAGE_UP                                                 &none   &trans  &trans  &trans  &trans  &trans
-&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT  &kp LC(A)                                                   &none   &trans  &trans  &trans  &trans  &trans
+&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT  &sl 7                                                       &none   &trans  &trans  &trans  &trans  &trans
 &none  &caps_word      &sk LEFT_ALT  &kp DOWN          &kp END    &kp PAGE_DOWN  &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
 &none  &none           &none         &to 0             &none                     &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
@@ -391,28 +376,41 @@
 
         sym_layer {
             bindings = <
-&trans  &trans       &trans              &trans               &trans                                                                                     &trans  &trans  &trans  &trans  &trans
-&trans  &trans       &trans              &trans               &trans            &trans                                                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PIPE     &kp SLASH           &kp BSLH             &kp PLUS          &kp AMPERSAND                                                    &none   &trans  &trans  &trans  &trans  &trans
-&trans  &none        &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp LS(ASTERISK)  &kp QUESTION                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PERCENT  &kp LS(LEFT_BRACE)  &kp LS(RIGHT_BRACE)  &kp DOLLAR        &kp EXCLAMATION  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans       &trans              &to 0                &trans                             &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans                &trans                 &trans                                                                                   &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans                &trans                 &trans            &trans                                                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp PIPE          &kp SLASH             &kp BSLH               &kp LS(N7)        &kp LS(EQUAL)                                                  &none   &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(NUMBER_2)  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LS(NUMBER_4)  &kp LS(N8)                                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(NUMBER_3)  &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp LS(N5)        &kp LS(N6)     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans                &to 0                  &trans                           &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Symbols";
         };
 
-        func_layer {
+        Win_Layer {
             bindings = <
-&trans  &trans     &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans   &trans   &trans                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LSHFT  &kp F1  &kp F2   &kp F3   &kp F4                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LCTRL  &kp F5  &kp F6   &kp F7   &kp F8                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LALT   &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &to 0    &trans            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "Functions";
+            label = "Windows Quick Actions";
+        };
+
+        Mac_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Mac Quick Actions";
         };
 
         magic_layer {
@@ -439,17 +437,17 @@
             label = "QWERTY";
         };
 
-        select_layer {
+        func_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans   &trans   &trans                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LSHFT  &kp F1  &kp F2   &kp F3   &kp F4                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LCTRL  &kp F5  &kp F6   &kp F7   &kp F8                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LALT   &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &to 0    &trans            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "Layer Selection";
+            label = "Functions";
         };
     };
 };
