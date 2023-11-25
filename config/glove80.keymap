@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -220,6 +221,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        desktop_lock: desktop_lock {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DESKTOP_LOCK";
+            bindings = <&kp LG(D)>, <&kp LG(L)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        close_all_active: close_all_active {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CLOSE_ALL_ACTIVE";
+            bindings = <&kp LA(F4)>, <&kp LC(F4)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -331,18 +350,18 @@
 &kp TAB     &kp Q         &kp W         &kp M   &kp B   &parenthesis                                                                   &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
 &kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                          &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
 &kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp SQT       &mo 1  &to_mo_layer 3 3  &mo 5  &none  &none  &mo 2              &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
-&magic 7 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 8                 &kp E  &to_mo_layer 4 4  &mo 6  &none  &none  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
+&magic 7 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 9                 &kp E  &to_mo_layer 4 4  &mo 6  &none  &none  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
         lh_mod_layer {
             bindings = <
-&none  &none           &none         &none             &none                                                                          &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &none             &none      &none                                                       &trans  &trans  &trans  &trans  &trans  &trans
-&none  &kp CAPSLOCK    &sk LEFT_GUI  &kp UP            &kp HOME   &kp PAGE_UP                                                 &none   &trans  &trans  &trans  &trans  &trans
-&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT  &sl 7                                                       &none   &trans  &trans  &trans  &trans  &trans
-&none  &caps_word      &sk LEFT_ALT  &kp DOWN          &kp END    &kp PAGE_DOWN  &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &to 0             &none                     &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none                                                                            &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &none             &none      &none                                                         &trans  &trans  &trans  &trans  &trans  &trans
+&none  &kp CAPSLOCK    &sk LEFT_GUI  &kp UP            &kp HOME   &kp PAGE_UP                                                   &none   &trans  &trans  &trans  &trans  &trans
+&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT  &kt LC(LA(TAB))                                               &none   &trans  &trans  &trans  &trans  &trans
+&none  &caps_word      &sk LEFT_ALT  &kp DOWN          &kp END    &kp PAGE_DOWN    &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
+&none  &none           &none         &to 0             &none                       &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Left Hand Mods";
@@ -350,18 +369,18 @@
 
         rh_mod_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                          &none           &none              &none          &none                &none
-&trans  &trans  &trans  &trans  &trans  &trans                                               &none              &none           &none              &none          &none                &none
-&trans  &trans  &trans  &trans  &trans  &trans                                               &kp C_VOL_UP       &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT     &resest_taskmanager  &none
-&trans  &trans  &trans  &trans  &trans  &trans                                               &kp C_MUTE         &sk RGUI        &sk RIGHT_CONTROL  &sk RIGHT_ALT  &sk RSHFT            &none
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &kp C_VOLUME_DOWN  &none           &none              &kp LG(D)      &kp LA(F4)           &none
-&trans  &trans  &trans  &to 0   &trans          &trans  &trans  &trans  &none  &none  &none                     &none           &none              &none          &none                &none
+&trans  &trans  &trans  &trans  &trans                                                              &none           &none              &none            &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                                               &none  &none           &none              &none            &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                                               &none  &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT       &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                                               &none  &sk RGUI        &sk RIGHT_CONTROL  &sk RIGHT_ALT    &sk RSHFT  &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &kp C_VOL_DN    &kp C_MUTE         &kp C_VOLUME_UP  &none      &none
+&trans  &trans  &trans  &to 0   &trans          &trans  &trans  &trans  &none  &none  &none         &none           &none              &none            &none      &none
             >;
 
             label = "Right Hand Mods";
         };
 
-        lh_num_layer {
+        num_layer {
             bindings = <
 &trans  &trans     &trans  &trans  &trans                                                                              &trans   &trans  &trans  &trans     &trans
 &trans  &trans     &trans  &trans  &trans   &trans                                                       &trans        &trans   &trans  &trans  &trans     &trans
@@ -389,12 +408,12 @@
 
         Win_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans                                                                         &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans     &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LALT             &sk LCTRL      &sk LGUI           &kp LC(A)  &none                                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LEFT_SHIFT       &kp LC(X)      &kp LC(C)          &kp LC(V)  &undo_redo                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &resest_taskmanager  &desktop_lock  &close_all_active  &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans                 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Windows Quick Actions";
@@ -424,19 +443,6 @@
             >;
         };
 
-        qwerty_layer {
-            bindings = <
-&kp ESC         &kp F1        &kp F2        &kp F3  &kp F4                                                                      &kp F5            &kp F6             &kp F7         &kp F8         &kp F9
-&kp GRAVE       &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                      &kp N6  &kp N7            &kp N8             &kp N9         &kp N0         &kp BSPC
-&kp TAB         &kp Q         &kp W         &kp E   &kp R   &kp T                                                       &kp Y   &kp U             &kp I              &kp O          &kp P          &kp BSLH
-&kp CAPSLOCK    &kp A         &kp S         &kp D   &kp F   &kp G                                                       &kp H   &kp J             &kp K              &kp L          &kp SEMI       &kp SQT
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C   &kp V   &kp B   &kp BSPC   &none   &none   &trans  &trans  &kp TAB  &kp N   &kp M             &kp COMMA          &kp DOT        &kp FSLH       &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_GUI  &kp LEFT_ALT  &none   &trans          &kp SPACE  &trans  &trans  &trans  &trans  &kp RET          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_ALT  &kp RIGHT_GUI  &kp RCTRL
-            >;
-
-            label = "QWERTY";
-        };
-
         func_layer {
             bindings = <
 &trans  &trans     &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
@@ -448,6 +454,19 @@
             >;
 
             label = "Functions";
+        };
+
+        qwerty_layer {
+            bindings = <
+&kp ESC         &kp F1        &kp F2        &kp F3  &kp F4                                                                      &kp F5            &kp F6             &kp F7         &kp F8         &kp F9
+&kp GRAVE       &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                      &kp N6  &kp N7            &kp N8             &kp N9         &kp N0         &kp BSPC
+&kp TAB         &kp Q         &kp W         &kp E   &kp R   &kp T                                                       &kp Y   &kp U             &kp I              &kp O          &kp P          &kp BSLH
+&kp CAPSLOCK    &kp A         &kp S         &kp D   &kp F   &kp G                                                       &kp H   &kp J             &kp K              &kp L          &kp SEMI       &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C   &kp V   &kp B   &kp BSPC   &none   &none   &trans  &trans  &kp TAB  &kp N   &kp M             &kp COMMA          &kp DOT        &kp FSLH       &kp RIGHT_SHIFT
+&kp LCTRL       &kp LEFT_GUI  &kp LEFT_ALT  &none   &trans          &kp SPACE  &trans  &trans  &trans  &trans  &kp RET          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_ALT  &kp RIGHT_GUI  &kp RCTRL
+            >;
+
+            label = "QWERTY";
         };
     };
 };
