@@ -239,6 +239,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        filter_clear_reapply: filter_clear_reapply {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FILTER_CLEAR_REAPPLY";
+            bindings = <&kp LC(LS(L))>, <&kp LC(LA(L))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        save_new: save_new {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SAVE_NEW";
+            bindings = <&kp LC(S)>, <&kp LC(N)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        formula_enter_show: formula_enter_show {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FORMULA_ENTER_SHOW";
+            bindings = <&kp F2>, <&kp LC(GRAVE)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        copy_cut: copy_cut {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COPY_CUT";
+            bindings = <&kp LC(C)>, <&kp LC(X)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -408,12 +444,12 @@
 
         Win_Layer {
             bindings = <
-&trans  &trans               &trans         &trans             &trans                                                                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans         &trans             &trans     &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LALT             &sk LCTRL      &sk LGUI           &kp LC(A)  &none                                                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LEFT_SHIFT       &kp LC(X)      &kp LC(C)          &kp LC(V)  &undo_redo                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &resest_taskmanager  &desktop_lock  &close_all_active  &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans         &trans             &trans                 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans                                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans     &trans                                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LALT             &sk LCTRL      &sk LGUI           &kp LC(A)  &filter_clear_reapply                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LEFT_SHIFT       &kp LC(X)      &copy_cut          &kp LC(V)  &undo_redo                                                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &resest_taskmanager  &desktop_lock  &close_all_active  &save_new  &formula_enter_show    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans         &trans             &trans                            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Windows Quick Actions";
