@@ -358,13 +358,18 @@
         };
 
         hyphenf_question {
-            bindings = <&kp QUESTION>;
+            bindings = <&kp LS(SLASH)>;
             key-positions = <28 30>;
         };
 
         hyphenj_exclaim {
-            bindings = <&kp EXCLAMATION>;
+            bindings = <&kp LS(N1)>;
             key-positions = <28 31>;
+        };
+
+        hyphenz_at {
+            bindings = <&kp LS(N2)>;
+            key-positions = <28 32>;
         };
     };
 
