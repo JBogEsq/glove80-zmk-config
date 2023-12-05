@@ -275,6 +275,100 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        back_del: back_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACK_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mmoto_num: mmoto_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMOTO_NUM";
+            bindings = <&mo 4>, <&to 4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mmoto_rh_mod: mmoto_rh_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMOTO_RH_MOD";
+            bindings = <&mo 2>, <&to 2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mmoto_lh_nav: mmoto_lh_nav {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMOTO_LH_NAV";
+            bindings = <&mo 3>, <&to 3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ht_sp_us_mo: ht_sp_us_mo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SP_US_MO";
+            bindings = <&mo>, <&space_underscore>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_mo_kp: ht_mo_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_KP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        td_Lsh_moto_num: td_Lsh_moto_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LSH_MOTO_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&mmoto_num>;
+        };
+
+        td_Rsh_moto_num: td_Rsh_moto_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RSH_MOTO_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp RSHIFT>, <&mmoto_num>;
+        };
+
+        td_sym: td_sym {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SYM";
+            #binding-cells = <0>;
+            bindings = <&mo 5>, <&to 5>;
+        };
+
+        ht_mmoto_lnav_kp: ht_mmoto_lnav_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MMOTO_LNAV_KP";
+            bindings = <&mmoto_lh_nav>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        td_func: td_func {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_FUNC";
+            #binding-cells = <0>;
+            bindings = <&mo 6>, <&to 6>;
+        };
     };
 
     macros {
@@ -317,8 +411,8 @@
     combos {
         compatible = "zmk,combos";
 
-        periodo_backspace {
-            bindings = <&kp BACKSPACE>;
+        periodo_tab {
+            bindings = <&kp TAB>;
             key-positions = <40 43>;
         };
 
@@ -330,11 +424,6 @@
         periodi_enter {
             bindings = <&kp ENTER>;
             key-positions = <44 40>;
-        };
-
-        perioda_tab {
-            bindings = <&kp TAB>;
-            key-positions = <40 41>;
         };
 
         ry_backspace {
@@ -386,26 +475,24 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                           &kp F6  &kp F7  &kp F8  &kp F9          &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                   &kp N6          &kp N7  &kp N8  &kp N9  &kp N0          &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &kp Z                                                                    &kp APOSTROPHE  &kp K   &kp F   &kp J   &parenthesis    &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                    &period_colon   &kp A   &kp N   &kp O   &kp I           &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp X   &mo 1  &to_mo_layer 3 3  &mo 5  &none  &none  &mo 2              &comma_semi     &kp U   &kp L   &kp P   &hyphen_equals  &kp RIGHT_CONTROL
-&magic 7 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 9           &kp E  &to_mo_layer 4 4  &mo 6  &none  &none  &space_underscore                  &none   &none   &none   &kp RIGHT_ALT   &kp RIGHT_GUI
+&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                                 &kp F6  &kp F7  &kp F8  &kp F9         &kp F10
+&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                                         &kp N6          &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp M   &kp B   &parenthesis                                                                                                   &hyphen_equals  &kp K   &kp F   &kp J   &kp Z          &kp DELETE
+&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                          &period_colon   &kp A   &kp N   &kp O   &kp I          &kp RETURN
+&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &ht_mmoto_lnav_kp 0 ENTER  &td_sym           &mo 7  &none  &td_func          &back_del         &comma_semi     &kp U   &kp L   &kp P   &kp X          &kp RIGHT_CONTROL
+&magic 9 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 10                  &ht_mo_kp 1 E              &td_Lsh_moto_num  &mo 8  &none  &td_Rsh_moto_num  &ht_sp_us_mo 2 0                  &none   &none   &none   &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
         lh_mod_layer {
             bindings = <
-&none  &none           &none         &none             &none                                                                            &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &none             &none      &none                                                         &trans  &trans  &trans  &trans  &trans  &trans
-&none  &kp CAPSLOCK    &sk LEFT_GUI  &kp UP            &kp HOME   &kp PAGE_UP                                                   &none   &trans  &trans  &trans  &trans  &trans
-&none  &sk LEFT_SHIFT  &kp LEFT      &sk LEFT_CONTROL  &kp RIGHT  &kt LC(LA(TAB))                                               &none   &trans  &trans  &trans  &trans  &trans
-&none  &caps_word      &sk LEFT_ALT  &kp DOWN          &kp END    &kp PAGE_DOWN    &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
-&none  &none           &none         &to 0             &none                       &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans        &trans                                                                           &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans        &trans        &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp P   &kp N      &kp U         &kp B         &kp I                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A   &sk LCTRL  &sk LEFT_GUI  &sk LEFT_ALT  &sk LSHFT                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z   &kp X      &kp C         &kp V         &sk Y      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans        &trans                   &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
-
-            label = "Left Hand Mods";
         };
 
         rh_mod_layer {
@@ -413,12 +500,25 @@
 &trans  &trans  &trans  &trans  &trans                                                              &none           &none              &none            &none            &none
 &trans  &trans  &trans  &trans  &trans  &trans                                               &none  &none           &none              &none            &none            &none
 &trans  &trans  &trans  &trans  &trans  &trans                                               &none  &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT       &kp SCROLLLOCK   &none
-&trans  &trans  &trans  &trans  &trans  &trans                                               &none  &sk RGUI        &sk RIGHT_CONTROL  &sk RIGHT_ALT    &sk RSHFT        &none
+&trans  &trans  &trans  &trans  &trans  &trans                                               &none  &sk RMETA       &sk RIGHT_CONTROL  &sk RIGHT_ALT    &sk RSHFT        &none
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &kp C_VOL_DN    &kp C_MUTE         &kp C_VOLUME_UP  &kp PRINTSCREEN  &none
 &trans  &trans  &trans  &to 0   &trans          &trans  &trans  &trans  &none  &none  &none         &none           &none              &none            &none            &none
             >;
 
             label = "Right Hand Mods";
+        };
+
+        lh_nav_layer {
+            bindings = <
+&none  &none           &none     &none     &none                                                                            &trans  &trans  &trans  &trans  &trans
+&none  &none           &none     &none     &none      &none                                                         &trans  &trans  &trans  &trans  &trans  &trans
+&none  &kp CAPSLOCK    &none     &kp UP    &kp HOME   &kp PAGE_UP                                                   &none   &trans  &trans  &trans  &trans  &trans
+&none  &sk LEFT_SHIFT  &kp LEFT  &none     &kp RIGHT  &kt LC(LA(TAB))                                               &none   &trans  &trans  &trans  &trans  &trans
+&none  &caps_word      &none     &kp DOWN  &kp END    &kp PAGE_DOWN    &none  &none  &none  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans
+&none  &none           &none     &to 0     &none                       &none  &none  &none  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Left Hand Mods";
         };
 
         num_layer {
@@ -427,8 +527,8 @@
 &trans  &trans     &trans  &trans  &trans   &trans                                                             &trans        &trans   &trans  &trans  &trans     &trans
 &trans  &sk MINUS  &kp N9  &kp N8  &kp N7   &plus_times                                                        &plus_times   &kp N7   &kp N8  &kp N9  &kp MINUS  &trans
 &trans  &sk LSHFT  &kp N6  &kp N5  &kp N4   &dot_divide                                                        &dot_divide   &kp N4   &kp N5  &kp N6  &sk RSHFT  &trans
-&trans  &kp ENTER  &kp N3  &kp N2  &kp N1   &kp N0       &mo 1      &trans  &trans  &trans  &trans  &mo 2      &kp NUMBER_0  &kp N1   &kp N2  &kp N3  &kp ENTER  &trans
-&trans  &trans     &kp F2  &to 0   &kp TAB               &kp EQUAL  &mo 4   &trans  &trans  &mo 4   &kp EQUAL                &kp TAB  &to 0   &kp F2  &trans     &trans
+&trans  &kp ENTER  &kp N3  &kp N2  &kp N1   &kp N0       &mo 3      &trans  &trans  &trans  &trans  &mo 2      &kp NUMBER_0  &kp N1   &kp N2  &kp N3  &kp ENTER  &trans
+&trans  &trans     &kp F2  &to 0   &kp TAB               &kp EQUAL  &mo 5   &trans  &trans  &mo 5   &kp EQUAL                &kp TAB  &to 0   &kp F2  &trans     &trans
             >;
 
             label = "Numbers";
@@ -445,6 +545,19 @@
             >;
 
             label = "Symbols";
+        };
+
+        func_layer {
+            bindings = <
+&trans  &trans     &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans   &trans   &trans                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LSHFT  &kp F1  &kp F2   &kp F3   &kp F4                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LCTRL  &kp F5  &kp F6   &kp F7   &kp F8                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LALT   &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &to 0    &trans            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Functions";
         };
 
         Win_Layer {
@@ -482,19 +595,6 @@
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &none        &none            &none            &to 0            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
-        };
-
-        func_layer {
-            bindings = <
-&trans  &trans     &trans  &trans   &trans                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans   &trans   &trans                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LSHFT  &kp F1  &kp F2   &kp F3   &kp F4                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LCTRL  &kp F5  &kp F6   &kp F7   &kp F8                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LALT   &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &to 0    &trans            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-
-            label = "Functions";
         };
 
         qwerty_layer {
