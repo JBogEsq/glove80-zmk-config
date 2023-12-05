@@ -495,12 +495,12 @@
 
         lh_mod_layer {
             bindings = <
-&trans  &trans  &trans     &trans        &trans                                                                           &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans        &trans        &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp P   &kp N      &kp U         &kp B         &kp I                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A   &sk LCTRL  &sk LEFT_GUI  &sk LEFT_ALT  &sk LSHFT                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z   &kp X      &kp C         &kp V         &sk Y      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &to 0         &trans                   &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans    &trans                                                                           &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &trans                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp P   &kp N      &kp U     &kp B      &kp I                                                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A   &kp LSHFT  &kp LALT  &kp LCTRL  &sk LEFT_GUI                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z   &kp X      &kp C     &kp V      &sk Y         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &to 0     &trans                   &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
