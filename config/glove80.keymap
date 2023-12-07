@@ -69,33 +69,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        at_hash: at_hash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "AT_HASH";
-            bindings = <&kp LS(NUMBER_2)>, <&kp LS(NUMBER_3)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
-        undo_redo: undo_redo {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UNDO_REDO";
-            bindings = <&kp K_UNDO>, <&kp LC(Y)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        copy_paste: copy_paste {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COPY_PASTE";
-            bindings = <&kp LC(K_COPY)>, <&kp LC(V)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         space_underscore: space_underscore {
             compatible = "zmk,behavior-mod-morph";
             label = "SPACE_UNDERSCORE";
@@ -112,51 +85,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
-        dollar_percent: dollar_percent {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOLLAR_PERCENT";
-            bindings = <&kp LS(NUMBER_4)>, <&kp LS(N5)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        asterik_question: asterik_question {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ASTERIK_QUESTION";
-            bindings = <&kp LS(N8)>, <&kp QUESTION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        plus_ampersand: plus_ampersand {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PLUS_AMPERSAND";
-            bindings = <&kp LS(EQUAL)>, <&kp LS(N7)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        exclaim_pipe: exclaim_pipe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "EXCLAIM_PIPE";
-            bindings = <&kp LS(N1)>, <&kp LS(BACKSLASH)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        caret_tilde: caret_tilde {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CARET_TILDE";
-            bindings = <&kp LS(N6)>, <&kp LS(GRAVE)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         parenthesis: parenthesis {
@@ -186,15 +114,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        resest_taskmanager: resest_taskmanager {
-            compatible = "zmk,behavior-mod-morph";
-            label = "RESEST_TASKMANAGER";
-            bindings = <&kp LS(LC(DELETE))>, <&kp LC(LS(ESCAPE))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         plus_times: plus_times {
             compatible = "zmk,behavior-mod-morph";
             label = "PLUS_TIMES";
@@ -208,69 +127,6 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_DIVIDE";
             bindings = <&kp DOT>, <&kp SLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        question_exclaim: question_exclaim {
-            compatible = "zmk,behavior-mod-morph";
-            label = "QUESTION_EXCLAIM";
-            bindings = <&kp LS(SLASH)>, <&kp LS(NUMBER_1)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        desktop_lock: desktop_lock {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DESKTOP_LOCK";
-            bindings = <&kp LG(D)>, <&kp LG(L)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        close_all_active: close_all_active {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CLOSE_ALL_ACTIVE";
-            bindings = <&kp LA(F4)>, <&kp LC(F4)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        filter_clear_reapply: filter_clear_reapply {
-            compatible = "zmk,behavior-mod-morph";
-            label = "FILTER_CLEAR_REAPPLY";
-            bindings = <&kp LC(LS(L))>, <&kp LC(LA(L))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        save_new: save_new {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SAVE_NEW";
-            bindings = <&kp LC(S)>, <&kp LC(N)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        formula_enter_show: formula_enter_show {
-            compatible = "zmk,behavior-mod-morph";
-            label = "FORMULA_ENTER_SHOW";
-            bindings = <&kp F2>, <&kp LC(GRAVE)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        copy_cut: copy_cut {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COPY_CUT";
-            bindings = <&kp LC(C)>, <&kp LC(X)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -377,6 +233,26 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ht_kp_kp: ht_kp_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_KP_KP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_sk_kp: ht_sk_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SK_KP";
+            bindings = <&sk>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -571,12 +447,12 @@
 
         Win_Layer {
             bindings = <
-&trans  &trans               &trans         &trans             &trans                                                                                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans         &trans             &trans     &trans                                                                 &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LALT             &sk LCTRL      &sk LGUI           &kp LC(A)  &filter_clear_reapply                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LEFT_SHIFT       &kp LC(X)      &copy_cut          &kp LC(V)  &undo_redo                                                             &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &resest_taskmanager  &desktop_lock  &close_all_active  &save_new  &formula_enter_show    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans         &trans             &trans                            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans     &trans    &trans                                                                     &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans     &trans    &trans     &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LALT        &sk LCTRL  &sk LGUI  &kp LC(A)  &none                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sk LEFT_SHIFT  &kp LC(X)  &none     &kp LC(V)  &none                                                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none           &none      &none     &none      &none   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans     &trans    &trans             &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Windows Quick Actions";
