@@ -54,13 +54,13 @@
             flavor = "tap-preferred";
         };
 
-        ht_mo_kp: ht_mo_kp {
+        ht_long_mo_kp: ht_long_mo_kp {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_MO_KP";
+            label = "HT_LONG_MO_KP";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             flavor = "tap-unless-interrupted";
         };
 
@@ -326,14 +326,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LSHFT_TD_NUM";
             #binding-cells = <0>;
-            bindings = <&kp LSHFT>, <&mo 4>, <&to 4>;
+            bindings = <&sk LSHFT>, <&mo 4>, <&to 4>;
         };
 
         rshft_td_num: rshft_td_num {
             compatible = "zmk,behavior-tap-dance";
             label = "RSHFT_TD_NUM";
             #binding-cells = <0>;
-            bindings = <&kp RSHFT>, <&mo 4>, <&to 4>;
+            bindings = <&sk RSHFT>, <&mo 4>, <&to 4>;
         };
 
         td_lhNav: td_lhNav {
@@ -348,6 +348,32 @@
             label = "TD_SHIFT_NUMLK";
             #binding-cells = <0>;
             bindings = <&sk RSHFT>, <&kp KP_NUMLOCK>;
+        };
+
+        ht_mo_back_del: ht_mo_back_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_BACK_DEL";
+            bindings = <&mo>, <&back_del>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            flavor = "tap-unless-interrupted";
+        };
+
+        mmorph_sym: mmorph_sym {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMORPH_SYM";
+            bindings = <&mo 5>, <&to 5>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        td_sym_lhnav: td_sym_lhnav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SYM_LHNAV";
+            #binding-cells = <0>;
+            bindings = <&mmorph_sym>, <&mmoto_lh_nav>;
         };
     };
 
@@ -469,12 +495,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1       &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                   &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
-&kp GRAVE    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                           &kp N6          &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
-&kp TAB      &kp Q         &kp W         &kp M   &kp B   &td_par_ex_qu                                                                                    &hyphen_equals  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
-&kp ESC      &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                            &period_colon   &kp A      &kp N        &kp O    &kp I          &kp RETURN
-&kp LCTRL    &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &ht_mo_kp 5 ENTER  &td_lhNav      &mo 8  &none  &td_func       &back_del         &comma_semi     &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
-&magic 10 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 11                  &ht_mo_kp 1 E      &lshft_td_num  &mo 9  &none  &rshft_td_num  &ht_sp_us_mo 2 0                  &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1       &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                           &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
+&kp GRAVE    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                                   &kp N6          &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB      &kp Q         &kp W         &kp M   &kp B   &td_par_ex_qu                                                                                            &hyphen_equals  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
+&kp ESC      &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                    &period_colon   &kp A      &kp N        &kp O    &kp I          &kp RETURN
+&kp LCTRL    &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &ht_long_mo_kp 1 ENTER  &td_sym_lhnav  &mo 8  &none  &td_func       &ht_mo_back_del 2 0  &comma_semi     &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
+&magic 10 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 11                  &kp E                   &lshft_td_num  &mo 9  &none  &rshft_td_num  &space_underscore                    &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
