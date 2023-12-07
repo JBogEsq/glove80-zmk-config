@@ -321,6 +321,34 @@
             #binding-cells = <0>;
             bindings = <&left_par_exclaim>, <&right_par_quest>;
         };
+
+        lshft_td_num: lshft_td_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LSHFT_TD_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&mo 4>, <&to 4>;
+        };
+
+        rshft_td_num: rshft_td_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RSHFT_TD_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT>, <&mo 4>, <&to 4>;
+        };
+
+        td_lhNav: td_lhNav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LHNAV";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&to 3>;
+        };
+
+        td_shift_numlk: td_shift_numlk {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SHIFT_NUMLK";
+            #binding-cells = <0>;
+            bindings = <&sk RSHFT>, <&kp KP_NUMLOCK>;
+        };
     };
 
     macros {
@@ -357,6 +385,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
+        };
+
+        xl_less_0: xl_less_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp N9>;
+            label = "XL_LESS_0";
+        };
+
+        xl_more_0: xl_more_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp NUMBER_0>;
+            label = "XL_MORE_0";
         };
     };
 
@@ -427,12 +469,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                                 &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                                         &kp N6          &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp M   &kp B   &td_par_ex_qu                                                                                                  &hyphen_equals  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
-&kp ESC     &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                                          &period_colon   &kp A      &kp N        &kp O    &kp I          &kp RETURN
-&kp LCTRL   &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &ht_mmoto_lnav_kp 0 ENTER  &td_sym           &mo 7  &none  &td_func          &back_del         &comma_semi     &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
-&magic 9 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 10                  &ht_mo_kp 1 E              &td_Lsh_moto_num  &mo 8  &none  &td_Rsh_moto_num  &ht_sp_us_mo 2 0                  &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1       &kp F2        &kp F3        &kp F4  &kp F5                                                                                                                   &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
+&kp GRAVE    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                           &kp N6          &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB      &kp Q         &kp W         &kp M   &kp B   &td_par_ex_qu                                                                                    &hyphen_equals  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
+&kp ESC      &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                            &period_colon   &kp A      &kp N        &kp O    &kp I          &kp RETURN
+&kp LCTRL    &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &ht_mo_kp 5 ENTER  &td_lhNav      &mo 8  &none  &td_func       &back_del         &comma_semi     &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
+&magic 10 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 11                  &ht_mo_kp 1 E      &lshft_td_num  &mo 9  &none  &rshft_td_num  &ht_sp_us_mo 2 0                  &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
@@ -475,12 +517,12 @@
 
         num_layer {
             bindings = <
-&trans  &trans                 &trans  &trans  &trans                                                                                   &trans           &trans           &trans           &trans                     &trans
-&trans  &trans                 &trans  &trans  &trans   &trans                                                             &trans       &trans           &trans           &trans           &trans                     &trans
-&trans  &kp FSLH               &kp N9  &kp N8  &kp N7   &plus_times                                                        &plus_times  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE              &trans
-&trans  &ht_sk_kp LSHFT MINUS  &kp N6  &kp N5  &kp N4   &kp DOT                                                            &kp KP_DOT   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &ht_sk_kp RSHIFT KP_MINUS  &trans
-&trans  &kp ENTER              &kp N3  &kp N2  &kp N1   &kp N0       &mo 3      &trans  &trans  &trans  &trans  &mo 2      &kp KP_N0    &kp KP_N1        &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER               &trans
-&trans  &trans                 &kp F2  &to 0   &kp TAB               &kp EQUAL  &mo 5   &trans  &trans  &mo 5   &kp EQUAL               &kp TAB          &kp KP_NUMLOCK   &kp F2           &trans                     &trans
+&trans  &trans                 &trans  &trans  &trans                                                                                                     &trans           &trans           &trans           &trans                     &trans
+&trans  &trans                 &trans  &trans  &trans   &trans                                                                               &trans       &trans           &trans           &trans           &trans                     &trans
+&trans  &kp FSLH               &kp N9  &kp N8  &kp N7   &plus_times                                                                          &plus_times  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE              &trans
+&trans  &ht_sk_kp LSHFT MINUS  &kp N6  &kp N5  &kp N4   &kp DOT                                                                              &kp KP_DOT   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &ht_sk_kp RSHIFT KP_MINUS  &trans
+&trans  &kp ENTER              &kp N3  &kp N2  &kp N1   &kp N0       &mo 3      &trans  &trans  &sk RIGHT_GUI  &sk RIGHT_CONTROL  &mo 7      &kp KP_N0    &kp KP_N1        &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER               &trans
+&trans  &trans                 &kp F2  &to 0   &kp TAB               &kp EQUAL  &mo 5   &trans  &sk RIGHT_ALT  &td_shift_numlk    &kp EQUAL               &kp TAB          &kp KP_NUMLOCK   &kp F2           &trans                     &trans
             >;
 
             label = "Numbers";
@@ -488,12 +530,12 @@
 
         sym_layer {
             bindings = <
-&trans  &trans         &trans         &trans            &trans                                                                           &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans         &trans            &trans       &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp BACKSLASH  &kp LS(EQUAL)  &kp LS(NUMBER_4)  &kp LS(N2)   &kp LS(N3)                                                  &none   &trans  &trans  &trans  &trans  &trans
-&trans  &sk LSHFT      &braces        &brackets         &comparison  &kp LS(N1)                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(N5)     &kp LS(N6)     &kp LS(N7)        &kp LS(N8)   &kp SLASH   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans         &to 0             &trans                   &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans         &trans            &trans                                                                           &trans        &trans         &trans         &trans        &trans
+&trans  &trans         &trans         &trans            &trans       &trans                                                      &trans  &trans        &trans         &trans         &trans        &trans
+&trans  &kp BACKSLASH  &kp LS(EQUAL)  &kp LS(NUMBER_4)  &kp LS(N2)   &kp LS(N3)                                                  &none   &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &kp LS(RPAR)  &trans
+&trans  &sk LSHFT      &braces        &brackets         &comparison  &kp LS(N1)                                                  &none   &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &sk RCTRL     &trans
+&trans  &kp LS(N5)     &kp LS(N6)     &kp LS(N7)        &kp LS(N8)   &kp SLASH   &trans  &trans  &trans  &trans  &trans  &trans  &none   &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &none         &trans
+&trans  &trans         &trans         &to 0             &trans                   &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans         &trans         &trans        &trans
             >;
 
             label = "Symbols";
@@ -510,6 +552,17 @@
             >;
 
             label = "Functions";
+        };
+
+        excel_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                         &trans      &trans     &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans         &trans      &trans     &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &xl_less_0     &xl_more_0  &trans     &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &kp LC(GRAVE)  &kp LC(C)   &kp LC(V)  &kp F4  &sk RSHFT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans      &trans     &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans                 &trans      &trans     &trans  &trans     &trans
+            >;
         };
 
         Win_Layer {
