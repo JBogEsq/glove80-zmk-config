@@ -25,6 +25,8 @@
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
 
+        // for MoErgo default behaviors
+
         layer_td: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_TAP_DANCE";
@@ -41,8 +43,40 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+        
+        // for hold-tap behaviors
 
-        to_mo_layer: to_mo_layer {
+        ht_kp_kp: ht_kp_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_KP_KP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_mo_kp: ht_mo_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_KP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_sk_kp: ht_sk_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SK_KP";
+            bindings = <&sk>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_to_mo: ht_to_mo {
             compatible = "zmk,behavior-hold-tap";
             label = "TO_MO_LAYER";
             bindings = <&mo>, <&to>;
@@ -50,11 +84,61 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+        
+        ht_sp_us_mo: ht_sp_us_mo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SP_US_MO";
+            bindings = <&mo>, <&space_underscore>;
 
-        period_colon: period_colon {
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        ht_mmoto_lnav_kp: ht_mmoto_lnav_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MMOTO_LNAV_KP";
+            bindings = <&mmoto_lh_nav>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+        
+
+        // for mod-morph behaviors
+
+        back_del: back_del {
             compatible = "zmk,behavior-mod-morph";
-            label = "PERIOD_COLON";
-            bindings = <&kp PERIOD>, <&kp COLON>;
+            label = "BACK_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        brackets: brackets {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Brackets";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    
+        braces: braces {
+            compatible = "zmk,behavior-mod-morph";
+            label = "braces";
+            bindings = <&kp LS(LEFT_BRACKET)>, <&kp LS(RIGHT_BRACKET)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        capslock: capslock {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CAPSLOCK";
+            bindings = <&caps_word>, <&kp CAPS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -69,10 +153,19 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        space_underscore: space_underscore {
+        comparison: comparison {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPACE_UNDERSCORE";
-            bindings = <&kp SPACE>, <&kp LS(MINUS)>;
+            label = "COMPARISON";
+            bindings = <&kp LS(COMMA)>, <&kp LS(PERIOD)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_divide: dot_divide {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_DIVIDE";
+            bindings = <&kp DOT>, <&kp SLASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -96,19 +189,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        comparison: comparison {
+        period_colon: period_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMPARISON";
-            bindings = <&kp LS(COMMA)>, <&kp LS(PERIOD)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        capslock: capslock {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CAPSLOCK";
-            bindings = <&caps_word>, <&kp CAPS>;
+            label = "PERIOD_COLON";
+            bindings = <&kp PERIOD>, <&kp COLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -122,38 +206,29 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        dot_divide: dot_divide {
+        
+        space_underscore: space_underscore {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_DIVIDE";
-            bindings = <&kp DOT>, <&kp SLASH>;
+            label = "SPACE_UNDERSCORE";
+            bindings = <&kp SPACE>, <&kp LS(MINUS)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        back_del: back_del {
+        zero_minus: zero_minus {
             compatible = "zmk,behavior-mod-morph";
-            label = "BACK_DEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            label = "ZERO_MINUS";
+            bindings = <&kp KP_NUMBER_0>, <&kp MINUS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
+        
         mmoto_num: mmoto_num {
             compatible = "zmk,behavior-mod-morph";
             label = "MMOTO_NUM";
             bindings = <&mo 4>, <&to 4>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mmoto_rh_mod: mmoto_rh_mod {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MMOTO_RH_MOD";
-            bindings = <&mo 2>, <&to 2>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -167,26 +242,18 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        
+        mmoto_rh_mod: mmoto_rh_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMOTO_RH_MOD";
+            bindings = <&mo 2>, <&to 2>;
 
-        ht_sp_us_mo: ht_sp_us_mo {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_SP_US_MO";
-            bindings = <&mo>, <&space_underscore>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        ht_mo_kp: ht_mo_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_MO_KP";
-            bindings = <&mo>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
+        // for tap-dance behaviors
 
         td_Lsh_moto_num: td_Lsh_moto_num {
             compatible = "zmk,behavior-tap-dance";
@@ -202,23 +269,6 @@
             bindings = <&kp RSHIFT>, <&mmoto_num>;
         };
 
-        td_sym: td_sym {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SYM";
-            #binding-cells = <0>;
-            bindings = <&mo 5>, <&to 5>;
-        };
-
-        ht_mmoto_lnav_kp: ht_mmoto_lnav_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_MMOTO_LNAV_KP";
-            bindings = <&mmoto_lh_nav>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
         td_func: td_func {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_FUNC";
@@ -226,34 +276,14 @@
             bindings = <&mo 6>, <&to 6>;
         };
 
-        zero_minus: zero_minus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ZERO_MINUS";
-            bindings = <&kp KP_NUMBER_0>, <&kp MINUS>;
-
+        td_sym: td_sym {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SYM";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&mo 5>, <&to 5>;
         };
 
-        ht_kp_kp: ht_kp_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_KP_KP";
-            bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        ht_sk_kp: ht_sk_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_SK_KP";
-            bindings = <&sk>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
     };
 
     macros {
