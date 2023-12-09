@@ -383,6 +383,29 @@
             #binding-cells = <0>;
             bindings = <&mo 2>, <&mo 5>;
         };
+
+        ques_exlc: ques_exlc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUES_EXLC";
+            bindings = <&kp QUESTION>, <&kp EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        td_dash_eq_qu_ex: td_dash_eq_qu_ex {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DASH_EQ_QU_EX";
+            #binding-cells = <0>;
+            bindings = <&hyphen_equals>, <&ques_exlc>;
+        };
+
+        td_lrPar_lrBrack: td_lrPar_lrBrack {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LRPAR_LRBRACK";
+            #binding-cells = <0>;
+            bindings = <&parenthesis>, <&brackets>;
+        };
     };
 
     macros {
@@ -498,12 +521,12 @@
             // |    64  |   65  |   66  |   67  |   68  |       |   69  |   70  |   71  ||  72  |   73  |   74  |       |   75  |   76  |   77  |   78  |   79  |
 
             bindings = <
-&kp F1       &kp F2        &kp F3        &kp F4  &kp F5                                                                                                       &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
-&kp GRAVE    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                               &kp N6          &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
-&kp TAB      &kp Q         &kp W         &kp M   &kp B   &td_par_ex_qu                                                                        &hyphen_equals  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
-&kp ESC      &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                &period_colon   &kp A      &kp N        &kp O    &kp I          &kp RETURN
-&kp LCTRL    &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE  &td_lhmod_sym  &td_lhNav  &mo 8  &none  &td_func  &td_rhmod_sym      &comma_semi     &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
-&magic 10 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 11                  &kp E          &td_num    &mo 9  &none  &td_num   &space_underscore                  &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
+&kp F1       &kp F2        &kp F3        &kp F4  &kp F5                                                                                                             &kp F6     &kp F7       &kp F8   &kp F9         &kp F10
+&kp GRAVE    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                                                                                  &kp N6             &kp N7     &kp N8       &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB      &kp Q         &kp W         &kp M   &kp B   &td_lrPar_lrBrack                                                                       &td_dash_eq_qu_ex  &kp K      &kp F        &kp J    &kp Z          &kp DELETE
+&kp ESC      &kp S         &kp R         &kp T   &kp H   &kp Y                                                                                   &period_colon      &kp A      &kp N        &kp O    &kp I          &kp RETURN
+&kp LCTRL    &kp V         &kp C         &kp G   &kp D   &kp APOSTROPHE     &td_lhmod_sym  &td_lhNav  &mo 8  &none  &td_func  &td_rhmod_sym      &comma_semi        &kp U      &kp L        &kp P    &kp X          &kp RIGHT_CONTROL
+&magic 10 0  &kp LEFT_ALT  &kp LEFT_GUI  &to 0   &to 11                     &kp E          &td_num    &mo 9  &none  &td_num   &space_underscore                     &brackets  &comparison  &braces  &kp RIGHT_ALT  &kp RIGHT_GUI
             >;
         };
 
