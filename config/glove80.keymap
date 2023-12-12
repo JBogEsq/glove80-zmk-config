@@ -462,7 +462,7 @@
     combos {
         compatible = "zmk,combos";
 
-        periodo_tab {
+        periodo_bs {
             bindings = <&kp BACKSPACE>;
             key-positions = <40 43>;
         };
@@ -494,17 +494,42 @@
 
         hyphenf_question {
             bindings = <&kp LS(SLASH)>;
-            key-positions = <28 30>;
+            key-positions = <28 31>;
         };
 
         hyphenj_exclaim {
             bindings = <&kp LS(N1)>;
-            key-positions = <28 31>;
+            key-positions = <28 32>;
         };
 
         hyphenz_at {
             bindings = <&kp LS(N2)>;
-            key-positions = <28 32>;
+            key-positions = <28 30>;
+        };
+
+        left_at {
+            bindings = <&kp AT>;
+            key-positions = <27 25>;
+        };
+
+        right_paren {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <27 24>;
+        };
+
+        left_paren {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <26 23>;
+        };
+
+        left_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <39 25>;
+        };
+
+        left_tab {
+            bindings = <&kp TAB>;
+            key-positions = <39 24>;
         };
     };
 
