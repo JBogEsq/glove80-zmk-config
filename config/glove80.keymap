@@ -176,7 +176,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LP_B";
             #binding-cells = <0>;
-            bindings = <&mo 5>;
+            bindings = <&ht_mo_sl 5 5>, <&tog 5>;
         };
 
         td_rp_b: td_rp_b {
@@ -233,6 +233,16 @@
             label = "TD_L_NUM";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&to 1>;
+        };
+
+        ht_mo_sl: ht_mo_sl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_SL";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
         };
     };
 
@@ -345,12 +355,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                                         &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
-&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4     &kp N5                                                                                &kp N6        &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB           &td_q     &td_w         &kp M   &kp B      &td_j                                                                                 &td_quot_at   &kp Z      &td_y      &kp K     &td_rp_t  &kp FSLH
-&kp ESC           &kp R     &kp S         &kp T   &kp N      &td_v                                                                                 &td_per_excl  &kp A      &kp E      &kp D     &kp I     &kp SQT
-&kp LEFT_CONTROL  &td_lp_b  &kp C         &kp G   &kp F      &td_x   &td_l_shift_sym  &td_nav_rnum  &kp SPACE  &kp SPACE  &kp SPACE   &kp RSHFT    &td_com_dash  &kp O      &kp U      &kp P     &td_rp_b  &kp RCTRL
-&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &kp SPACE          &td_h_low_lay    &kp L         &kp SPACE  &kp SPACE  &mm_bs_del  &mm_sp_unds                &kp SPACE  &kp SPACE  &kp RGUI  &kp RALT  &kp SPACE
+&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                                           &kp F6       &kp F7     &kp F8    &kp F9    &kp F10
+&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4       &kp N5                                                                                &kp N6        &kp N7       &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB           &td_q     &td_w         &kp M   &kp B        &td_j                                                                                 &td_quot_at   &kp Z        &td_y      &kp K     &td_rp_t  &kp FSLH
+&kp ESC           &kp R     &kp S         &kp T   &kp N        &td_v                                                                                 &td_per_excl  &kp A        &kp E      &kp D     &kp I     &kp SQT
+&kp LEFT_CONTROL  &td_lp_b  &kp C         &kp G   &kp F        &td_x   &td_l_shift_sym  &td_nav_rnum  &kp SPACE  &kp SPACE  &kp SPACE   &kp RSHFT    &td_com_dash  &kp O        &kp U      &kp P     &td_rp_b  &kp RCTRL
+&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &key_repeat          &td_h_low_lay    &kp L         &kp SPACE  &kp SPACE  &mm_bs_del  &mm_sp_unds                &key_repeat  &kp SPACE  &kp RGUI  &kp RALT  &kp SPACE
             >;
         };
 
@@ -398,13 +408,13 @@
             >;
         };
 
-        l_bot_layer {
+        lp_bot_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &sl 11  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -454,6 +464,17 @@
         };
 
         to_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        lp_mod_bot_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
