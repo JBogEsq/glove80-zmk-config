@@ -41,6 +41,178 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
+        mm_per_col: mm_per_col {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PER_COL";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_com_semi: mm_com_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_COM_SEMI";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_sp_unds: mm_sp_unds {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SP_UNDS";
+            bindings = <&kp SPACE>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_l_r_par: mm_l_r_par {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_L_R_PAR";
+            bindings = <&kp LS(NUMBER_9)>, <&kp LS(NUMBER_0)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_f_b_slash: mm_f_b_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_F_B_SLASH";
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_bs_del: mm_bs_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BS_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_exc_que: mm_exc_que {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_EXC_QUE";
+            bindings = <&kp EXCLAMATION>, <&kp QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_dash_eq: mm_dash_eq {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DASH_EQ";
+            bindings = <&kp MINUS>, <&kp EQUAL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_at_ast: mm_at_ast {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_AT_AST";
+            bindings = <&kp AT>, <&kp ASTRK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        td_j: td_j {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_J";
+            #binding-cells = <0>;
+            bindings = <&kp J>;
+        };
+
+        td_q: td_q {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q";
+            #binding-cells = <0>;
+            bindings = <&kp Q>;
+        };
+
+        td_x: td_x {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_X";
+            #binding-cells = <0>;
+            bindings = <&kp X>;
+        };
+
+        td_h_low_lay: td_h_low_lay {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_H_LOW_LAY";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&mo 1>, <&to 1>;
+        };
+
+        td_y: td_y {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Y";
+            #binding-cells = <0>;
+            bindings = <&kp Y>;
+        };
+
+        td_v: td_v {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_V";
+            #binding-cells = <0>;
+            bindings = <&kp V>;
+        };
+
+        td_w: td_w {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_W";
+            #binding-cells = <0>;
+            bindings = <&kp W>;
+        };
+
+        td_lp_b: td_lp_b {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LP_B";
+            #binding-cells = <0>;
+            bindings = <&mo 5>;
+        };
+
+        td_rp_b: td_rp_b {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RP_B";
+            #binding-cells = <0>;
+            bindings = <&mo 6>;
+        };
+
+        td_quot_at: td_quot_at {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QUOT_AT";
+            #binding-cells = <0>;
+            bindings = <&kp APOSTROPHE>, <&mm_at_ast>;
+        };
+
+        td_per_excl: td_per_excl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PER_EXCL";
+            #binding-cells = <0>;
+            bindings = <&mm_per_col>, <&mm_exc_que>;
+        };
+
+        td_com_dash: td_com_dash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COM_DASH";
+            #binding-cells = <0>;
+            bindings = <&mm_com_semi>, <&mm_dash_eq>;
+        };
+
+        td_rp_t: td_rp_t {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RP_T";
+            #binding-cells = <0>;
+            bindings = <&mo 8>;
+        };
     };
 
     macros {
@@ -152,12 +324,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                             &kp F6     &kp F7     &kp F8    &kp F9         &kp F10
-&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4     &kp N5                                                                   &kp N6         &kp N7     &kp N8     &kp N9    &kp N0         &kp MINUS
-&kp TAB           &kp Q     &kp W         &kp M   &kp B      &kp J                                                                    &kp LS(QMARK)  &kp Z      &kp Y      &kp K     &kp LS(QMARK)  &kp FSLH
-&kp ESC           &kp R     &kp S         &kp T   &kp N      &kp V                                                                    &kp DOT        &kp A      &kp E      &kp D     &kp I          &kp SQT
-&kp LEFT_CONTROL  &mo 5     &kp C         &kp G   &kp F      &kp X   &kp FSLH  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp COMMA      &kp O      &kp U      &kp P     &mo 4          &kp RCTRL
-&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &kp SPACE          &kp H     &kp L      &kp SPACE  &kp SPACE  &kp BSPC   &kp SPACE                 &kp SPACE  &kp SPACE  &kp RGUI  &kp RALT       &kp SPACE
+&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                                    &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
+&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4     &kp N5                                                                           &kp N6        &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB           &td_q     &td_w         &kp M   &kp B      &td_j                                                                            &td_quot_at   &kp Z      &td_y      &kp K     &td_rp_t  &kp FSLH
+&kp ESC           &kp R     &kp S         &kp T   &kp N      &td_v                                                                            &td_per_excl  &kp A      &kp E      &kp D     &kp I     &kp SQT
+&kp LEFT_CONTROL  &td_lp_b  &kp C         &kp G   &kp F      &td_x   &kp LSHFT      &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE   &kp RSHFT    &td_com_dash  &kp O      &kp U      &kp P     &td_rp_b  &kp RCTRL
+&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &kp SPACE          &td_h_low_lay  &kp L      &kp SPACE  &kp SPACE  &mm_bs_del  &mm_sp_unds                &kp SPACE  &kp SPACE  &kp RGUI  &kp RALT  &kp SPACE
             >;
         };
 
@@ -179,18 +351,7 @@
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 3
-            >;
-        };
-
-        factory_test_layer {
-            bindings = <
-&kp N0  &kp N6  &kp N2  &kp N8  &kp N4                                                                  &kp N4  &kp N8  &kp N2  &kp N6  &kp N0
-&kp N1  &kp N7  &kp N3  &kp N9  &kp N5  &kp N0                                                  &kp N0  &kp N5  &kp N9  &kp N3  &kp N7  &kp N1
-&kp N2  &kp N8  &kp N4  &kp N0  &kp N6  &kp N1                                                  &kp N1  &kp N6  &kp N0  &kp N4  &kp N8  &kp N2
-&kp N3  &kp N9  &kp N5  &kp N1  &kp N7  &kp N2                                                  &kp N2  &kp N7  &kp N1  &kp N5  &kp N9  &kp N3
-&kp N4  &kp N0  &kp N6  &kp N2  &kp N8  &kp N3  &kp N4  &kp N5  &kp N6  &kp N6  &kp N5  &kp N4  &kp N3  &kp N8  &kp N2  &kp N6  &kp N0  &kp N4
-&kp N5  &kp N1  &kp N7  &kp N3  &kp N9          &kp N7  &kp N8  &kp N9  &kp N9  &kp N8  &kp N7          &kp N9  &kp N3  &kp N7  &kp N1  &kp N5
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
@@ -251,12 +412,12 @@
 
         r_top_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                                                  &trans          &trans            &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans          &trans            &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &kp C_VOL_DN    &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &kp C_PREVIOUS  &kp C_NEXT        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans            &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans            &trans           &trans  &trans
             >;
         };
     };
