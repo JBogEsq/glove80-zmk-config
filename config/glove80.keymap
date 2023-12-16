@@ -152,12 +152,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                          &kp F6     &kp F7     &kp F8     &kp F9    &kp F10
-&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4     &kp N5                                                                    &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB           &kp Q     &kp W         &kp P   &kp G      &kp J                                                                     &kp MINUS  &kp K      &kp X      &kp COMMA  &kp Z     &kp BSLH
-&kp ESC           &kp R     &kp S         &kp T   &kp D      &kp Y                                                                     &kp DOT    &kp N      &kp O      &kp I      &kp E     &kp SQT
-&kp LEFT_CONTROL  &mo 5     &kp M         &kp B   &kp C      &kp F   &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp SEMI   &kp V      &kp A      &kp U      &mo 4     &kp RCTRL
-&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &kp SPACE          &kp H      &kp L      &kp SPACE  &kp SPACE  &kp BSPC   &kp SPACE             &kp SPACE  &kp SPACE  &kp RGUI   &kp RALT  &kp SPACE
+&kp F1            &kp F2    &kp F3        &kp F4  &kp F5                                                                                             &kp F6     &kp F7     &kp F8    &kp F9         &kp F10
+&kp GRAVE         &kp N1    &kp N2        &kp N3  &kp N4     &kp N5                                                                   &kp N6         &kp N7     &kp N8     &kp N9    &kp N0         &kp MINUS
+&kp TAB           &kp Q     &kp W         &kp M   &kp B      &kp J                                                                    &kp LS(QMARK)  &kp Z      &kp Y      &kp K     &kp LS(QMARK)  &kp FSLH
+&kp ESC           &kp R     &kp S         &kp T   &kp N      &kp V                                                                    &kp DOT        &kp A      &kp E      &kp D     &kp I          &kp SQT
+&kp LEFT_CONTROL  &mo 5     &kp C         &kp G   &kp F      &kp X   &kp FSLH  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE  &kp COMMA      &kp O      &kp U      &kp P     &mo 4          &kp RCTRL
+&magic 2 0        &kp LALT  &kp LEFT_WIN  &to 0   &kp SPACE          &kp H     &kp L      &kp SPACE  &kp SPACE  &kp BSPC   &kp SPACE                 &kp SPACE  &kp SPACE  &kp RGUI  &kp RALT       &kp SPACE
             >;
         };
 
